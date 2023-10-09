@@ -1,11 +1,14 @@
 [project]
 name = "web_list"
 version = "1"
-description = "SImple web page"
+description = "Simple web page"
 authors = [
     {name = "Fedor Baskaev", email = "xbaskaev@mendelu.cz"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.103.2",
+    "uvicorn>=2.0.1.post1",
+]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
@@ -13,3 +16,7 @@ license = {text = "MIT"}
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[tool.pdm.scripts]
+start = "uvicorn main:app --reload"
+
